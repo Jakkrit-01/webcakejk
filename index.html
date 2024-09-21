@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/output.css">
+    <link rel="stylesheet" href="assets/input.css">
+    <title>WebCake</title>
+</head>
+
+<body class="bg-white min-h-screen flex flex-col">
+    <nav class="bg-white w-full">
+        <div class="mx-auto py-4 max-w-screen-xl flex flex-wrap items-center justify-between">
+            <div class="flex items-center rtl:space-x-reverse gap-4">
+                <button id="toggle" class="lg:hidden ml-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-menu mx-auto">
+                        <line x1="4" x2="20" y1="12" y2="12" />
+                        <line x1="4" x2="20" y1="6" y2="6" />
+                        <line x1="4" x2="20" y1="18" y2="18" />
+                    </svg>
+                </button>
+                <a class="flex items-center space-x-3">
+                    <img src="https://t4.ftcdn.net/jpg/03/31/10/17/360_F_331101745_iJ3F7GUwZQKIeFCUCUtFZ51EWRAD0gjZ.jpg" class="h-12">
+                    <div>
+                        <h1 class="self-center text-2xl whitespace-nowrap">WebCake</h1>
+                    </div>
+                </a>
+                <div id="menu"
+                    class="hidden fixed  inset-y-0 left-0 w-64 bg-white mt-4 p-4 lg:w-auto lg:realative lg:space-x-3 lg:flex lg:mt-0 lg:p-0 lg:static">
+                    <button id="close" class="lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-x">
+                            <path d="M18 6 6 18" />
+                            <path d="m6 6 12 12" />
+                        </svg>
+                    </button>
+                    <a href="" class="flex items-center mb-4 lg:mb-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-house">
+                            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                            <path
+                                d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        </svg>
+                        <span class="ms-3">Home</span>
+                    </a>
+                    <a href="" class="flex items-center mb-4 lg:mb-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-package">
+                            <path d="m7.5 4.27 9 5.15" />
+                            <path
+                                d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+                            <path d="m3.3 7 8.7 5 8.7-5" />
+                            <path d="M12 22V12" />
+                        </svg>
+                        <span class="ms-3">Products</span>
+                    </a>
+                    <a href="" class="flex items-center mb-4 lg:mb-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-phone">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        <span class="ms-3">Contact</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-user">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg></a>
+                <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-shopping-cart">
+                        <circle cx="8" cy="21" r="1" />
+                        <circle cx="19" cy="21" r="1" />
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                    </svg></a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- =======================  Hero Section ============================= -->
+
+    <section class="hero full-screen w-full">
+        <div class="hero-content grid max-w-screen-xl mx-auto text-left pt-20">
+            <div class="mr-auto">
+                <p class="text-md pb-2 text-black shadow-white">คำแนะนำสำหรับคุณ</p>
+                <h1 class="text-4xl text-black font-bold">บลูเบอร์รรี่ชีสพาย</h1>
+                <p class="text-md text-black">หอมอร่อย ชีสเค้กละมุน อร่อยที่สุดแล้วในโลกใบนี้  <br>
+                    คุณภาพรังสรรมา ด้วยวัตถุดิบชั้นเลิศนำเข้าจากดาวนาเม็ก</p>
+                <div class="inline-flex gap-4 pt-12">
+                    <a href=""
+                        class="inline-flex items-center justify-center px-5 py-3 border-2 border-black rounded-md-lg text-black">สั่งซื้อเลย</a>
+                    <a href="" class="inline-flex items-center justify-center ">
+                        <svg class="text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        <span class="ml-2 text-black">0629387887</span>
+                    </a>
+                </div>
+                <div class="flex pt-5">
+                    <a href="#" class="inline-flex"><svg class="text-white" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-arrow-down">
+                            <path d="M12 5v14" />
+                            <path d="m19 12-7 7-7-7" />
+                        </svg> <span class="text-black">Scroll Down</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Hero Section -->
+
+
+    <!-- First Section -->
+    <section class="container flex flex-col items-center justify-center max-w-screen-xl mx-auto pb-10">
+        <h1 class="text-2xl font-medium text-center mt-5 mb-5">สินค้าพรีเมี่ยม</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
+                <img src="https://www.mitrpholsugar.com/wp-content/uploads/2023/04/Web-Feature-img_%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B9%8C_1568x1044.png"
+                    class="w-full h-80 object-cover">
+                <div class="px-6 py-4 flex justify-between">
+                    <h2 class="font-light ">คัตตาร์ดครัวซองสตอเบอรี่</h2>
+                    <h2 class="font-light ">480 บาท</h2>
+                </div>
+            </div>
+            <div class="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
+                <img src="https://p16-va.lemon8cdn.com/tos-alisg-v-a3e477-sg/8de39128cd4e429ca21075a47c8c3130~tplv-tej9nj120t-origin.webp"
+                    class="w-full h-80 object-cover">
+                <div class="px-6 py-4 flex justify-between">
+                    <h2 class="font-light ">เค้กผลไม้รวมหลากรส</h2>
+                    <h2 class="font-light ">990 บาท</h2>
+                </div>
+            </div>
+            <div class="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
+                <img src="https://basketeer.s3.ap-south-1.amazonaws.com/wp-content/uploads/2023/06/14142919/cake.-5.jpg"
+                    class="w-full h-80 object-cover">
+                <div class="px-6 py-4 flex justify-between">
+                    <h2 class="font-light ">เค้กเบอร์รี่เบิร์สครีม</h2>
+                    <h2 class="font-light ">1190 บาท</h2>
+                </div>
+            </div>
+            <div class="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEUJZCgAliknMN9avQFhYU3nWyKYKw8RM00_Cb36I3-zQNEPCyCY_VTVC7R4315aWnQLg&usqp=CAU"
+                    class="w-full h-80 object-cover">
+                <div class="px-6 py-4 flex justify-between">
+                    <h2 class="font-light ">สตรอว์เบอร์รีช็อคเค้ก</h2>
+                    <h2 class="font-light ">780 บาท</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================================================ -->
+
+    <section class="container flex flex-col items-center justify-center max-w-screen-xl mx-auto pb-10">
+        <h1 class="text-2xl font-medium text-center mb-5">สินค้าขายดี</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div class="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
+                <img src="https://www.sentangsedtee.com/wp-content/uploads/2019/06/IMG_1408.jpg"
+                    class="w-full h-80 object-cover">
+                <div class="px-6 py-4 flex justify-between">
+                    <h2 class="font-light ">เค้กสังขยาชาไทย</h2>
+                    <h2 class="font-light ">199 บาท</h2>
+                </div>
+            </div>
+            <div class="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
+                <img src="https://www.easycookingmenu.com/media/k2/items/cache/6b1c619be8b23a102b3cd1b7967289e5_XL.jpg"
+                    class="w-full h-80 object-cover">
+                <div class="px-6 py-4 flex justify-between">
+                    <h2 class="font-light ">คาราเมลคัสตาร์ดพุดดิ้ง</h2>
+                    <h2 class="font-light ">89 บาท</h2>
+                </div>
+            </div>
+            <div class="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7NCy_Daj0tq-E4GGzfvRlr2yVuNwl1Q2gZQ&s"
+                    class="w-full h-80 object-cover">
+                <div class="px-6 py-4 flex justify-between">
+                    <h2 class="font-light ">เค้กหมีพู H.B.D.</h2>
+                    <h2 class="font-light ">419 บาท</h2>
+                </div>
+            </div>
+            <div class="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
+                <img src="https://img.wongnai.com/p/1920x0/2020/11/26/18d055dcaed2498aa66064c574dc81a7.jpg"
+                    class="w-full h-80 object-cover">
+                <div class="px-6 py-4 flex justify-between">
+                    <h2 class="font-light ">เงาะชีสพายเค้ก</h2>
+                    <h2 class="font-light ">129 บาท</h2>
+                </div>
+            </div>
+            <div class="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
+                <img src="https://panleebakery.com/wp-content/uploads/2019/07/original-cake-snackbox-%E0%B8%AA%E0%B9%81%E0%B8%99%E0%B9%87%E0%B8%84%E0%B8%9A%E0%B9%8A%E0%B8%AD%E0%B8%81%E0%B8%8B%E0%B9%8C-%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B9%80%E0%B8%A5%E0%B8%B5%E0%B9%89%E0%B8%A2%E0%B8%87-catering_%E0%B8%AA%E0%B8%B1%E0%B8%A1%E0%B8%A1%E0%B8%99%E0%B8%B2-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1-%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%9B%E0%B8%B1%E0%B8%87-%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%84-%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%87-lunchbox-CoffeeBreak-foodstallmenu.jpg"
+                    class="w-full h-80 object-cover">
+                <div class="px-6 py-4 flex justify-between">
+                    <h2 class="font-light ">เค้กไข่ใต้หวัน</h2>
+                    <h2 class="font-light ">149 บาท</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =================================================================================== -->
+
+    <section class="container flex flex-col items-center justify-center max-w-screen-xl mx-auto pb-10">
+        <!-- <h1 class="text-2xl font-bold text-center">อยากขายให้ชาวดาวอังคาร</h1> -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div class="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
+                <img src="https://www.falconforprofessional.com/wp-content/uploads/2023/12/13-scaled-1-2048x1151.jpg"
+                    class="w-full h-80 object-cover">
+                <div class="px-6 py-4 flex justify-between">
+                    <h2 class="font-light ">เค้กรอดช่องเขาใหญ๋</h2>
+                    <h2 class="font-light ">79 บาท</h2>
+                </div>
+            </div>
+            <div class="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
+                <img src="https://www.prachachat.net/wp-content/uploads/2018/06/%E0%B9%80%E0%B8%84%E0%B8%81%E0%B8%97%E0%B9%80%E0%B8%A3%E0%B8%A2%E0%B8%995-728x485.jpg"
+                    class="w-full h-80 object-cover">
+                <div class="px-6 py-4 flex justify-between">
+                    <h2 class="font-light ">ทุดรียนเค้ก</h2>
+                    <h2 class="font-light ">599 บาท</h2>
+                </div>
+            </div>
+            <div class="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
+                <img src="https://image.makewebcdn.com/makeweb/m_1920x0/2AZeuultA/BD_cake_for_boy/S__120930329.jpg"
+                    class="w-full h-80 object-cover">
+                <div class="px-6 py-4 flex justify-between">
+                    <h2 class="font-light ">เค้กชาวดาวโลก</h2>
+                    <h2 class="font-light ">999+ บาท</h2>
+                </div>
+            </div>
+            <div class="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0VNNACylDUt__RmLotYf5r7JhRhAEv70enA&s"
+                    class="w-full h-80 object-cover">
+                <div class="px-6 py-4 flex justify-between">
+                    <h2 class="font-light ">เค้กชาวดาวอังคาร</h2>
+                    <h2 class="font-light ">999+ บาท</h2>
+                </div>
+            </div>
+            <div class="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
+                <img src="https://www.cakenbaker.com/wp-content/uploads/2020/04/Untitled-80.png"
+                    class="w-full h-80 object-cover">
+                <div class="px-6 py-4 flex justify-between">
+                    <h2 class="font-light ">เค้กม้าเจ้าหญิง</h2>
+                    <h2 class="font-light ">289 บาท</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Recommend Section -->
+
+    <section class="container flex flex-col justify-center max-w-screen-xl mx-auto">
+        <div class="flex justify-evenly items-center mb-5 bg-gradient-to-r from-red-200 to-indigo-600">
+            <div>
+                <h1 class="text-3xl">สินค้าแนะนำ</h1>
+                <p>เค้กสุดอร่อย ได้รางวัลชนะเลิศจาก การประกวดเค้กดีเด่น 2024 <br>
+                    เชิญชวนมาลิ้มลองกันได้แล้ววันนี้</p>
+                <button
+                    class="mt-2 bg-red-500 text-white font-normal py-2 px-4 rounded hover:bg-red-700">สั่งซื้อเลยตอนนี้</button>
+            </div>
+            <img class="h-auto w-[35%]"
+                src="img/cakee.png"
+                alt="">
+        </div </section>
+
+
+
+        <script>
+
+            document.getElementById('toggle').addEventListener('click', function () {
+
+                const menu = document.getElementById('menu');
+                menu.classList.toggle('hidden');
+
+            });
+
+            document.getElementById('close').addEventListener('click', function () {
+
+                const menu = document.getElementById('menu');
+                menu.classList.add('hidden');
+
+            });
+
+        </script>
+
+</body>
+
+</html>
